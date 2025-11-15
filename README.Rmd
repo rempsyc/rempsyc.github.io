@@ -1,0 +1,55 @@
+---
+output: html_document
+---
+
+### Oh, you found my secret GitHub page, congratulations!
+
+However, you might have more luck looking at my official website: [https://remi-theriault.com/](https://remi-theriault.com/)
+
+Also, kudos! As a bonus, you get to see the exclusive list of all my packages
+
+### CRAN Packages
+
+```{r setup, echo=FALSE, message=FALSE}
+source("helpers.R")
+
+author <- "Rémi Thériault"
+cran_pkgs <- c("rempsyc", "lavaanExtra")
+cran_data <- fetch_cran_data(author, pkgs = cran_pkgs)
+
+make_dt_with_hex(cran_data)
+```
+
+### easystats Packages
+
+```{r, echo=FALSE}
+easystats_pkgs <- c("insight", "datawizard", "performance", "effectsize", 
+                    "correlation", "see", "modelbased", "easystats", "report")
+easystats_data <- fetch_cran_data(author, pkgs = easystats_pkgs)
+
+make_dt_with_hex(easystats_data)
+```
+
+### Packages on R-Universe Only
+
+```{r, echo=FALSE}
+runiverse_data <- fetch_runiverse_data(author = "rempsyc",
+  pkgs_exclude = c(
+    cran_pkgs,
+    "pubmedDashboard",
+    "waffle",
+    "ggflags"
+  )
+)
+
+make_dt_with_hex(runiverse_data)
+```
+
+### Other Contributions
+
+```{r, echo=FALSE}
+cont_pkgs <- c("insight", "datawizard", "flextable")
+cont_data <- fetch_cran_data(author, pkgs = cont_pkgs)
+
+make_dt_with_hex(cont_data)
+```
