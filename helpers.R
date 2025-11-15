@@ -88,11 +88,12 @@ make_dt_with_hex <- function(
 
   dt_options <- list(
     pageLength = pageLength,
-    autoWidth = TRUE
+    autoWidth = TRUE,
+    dom = "t"
   )
 
   if (buttons) {
-    dt_options$dom <- "t" # "Bfrtip"
+    dt_options$dom <- "Bfrtip"
     dt_options$buttons <- c("copy", "csv", "excel")
   }
 
