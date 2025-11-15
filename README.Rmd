@@ -1,8 +1,12 @@
 ---
-output: html_document
+title: "Oh, you found my secret GitHub page, congratulations!"
+output:
+  html_document:
+    self_contained: true
+  github_document:
+    df_print: default
+knit: (function(input, encoding) { rmarkdown::render(input, encoding = encoding, output_format = "html_document", output_file = "index.html"); rmarkdown::render(input, encoding = encoding, output_format = "github_document", output_file = "README.md"); "README.md" })
 ---
-
-# Oh, you found my secret GitHub page, congratulations!
 
 However, you might have more luck looking at my official website: [https://remi-theriault.com/](https://remi-theriault.com/)
 
@@ -22,7 +26,7 @@ make_dt_with_hex(cran_data)
 
 ### easystats Packages
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, message=FALSE}
 easystats_pkgs <- c("insight", "datawizard", "performance", "effectsize", 
                     "correlation", "see", "modelbased", "easystats", "report")
 easystats_data <- fetch_cran_data(author, pkgs = easystats_pkgs)
@@ -32,7 +36,7 @@ make_dt_with_hex(easystats_data)
 
 ### Packages on R-Universe Only
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, message=FALSE}
 runiverse_data <- fetch_runiverse_data(author = "rempsyc",
   pkgs_exclude = c(
     cran_pkgs,
@@ -47,7 +51,7 @@ make_dt_with_hex(runiverse_data)
 
 ### Other Contributions
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, message=FALSE}
 cont_pkgs <- c("insight", "datawizard", "flextable")
 cont_data <- fetch_cran_data(author, pkgs = cont_pkgs)
 
