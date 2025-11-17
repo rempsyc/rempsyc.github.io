@@ -5,7 +5,7 @@ However, you might have more luck looking at my official website:
 <https://remi-theriault.com/>
 
 Also, kudos! As a bonus, you get to see the exclusive list of all my
-packages
+packages:
 
 ### CRAN Packages
 

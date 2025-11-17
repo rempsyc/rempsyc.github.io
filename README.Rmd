@@ -14,7 +14,7 @@ Also, kudos! As a bonus, you get to see the exclusive list of all my packages:
 
 ### CRAN Packages
 
-```{r cran_pkgs, echo=FALSE, message=FALSE}
+```{r cran_pkgs, echo=FALSE, message=FALSE, warning=FALSE}
 source("helpers.R")
 
 author <- "Rémi Thériault"
@@ -27,7 +27,7 @@ make_dt_with_hex(cran_data)
 ### easystats Packages
 
 ```{r easystats_pkgs, echo=FALSE, message=FALSE}
-easystats_pkgs <- c("insight", "datawizard", "performance", "effectsize", 
+easystats_pkgs <- c("performance", "effectsize", 
                     "correlation", "see", "modelbased", "easystats", "report")
 easystats_data <- fetch_cran_data(author, pkgs = easystats_pkgs)
 
