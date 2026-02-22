@@ -39,7 +39,8 @@ make_dt_with_hex(easystats_data)
 ### Packages on R-Universe Only
 
 ```{r runiverse_data, echo=FALSE, message=FALSE}
-runiverse_data <- fetch_runiverse_data(author = "rempsyc",
+runiverse_data_rempsyc <- fetch_runiverse_data(
+  author = "rempsyc",
   pkgs_exclude = c(
     cran_pkgs,
     "pubmedDashboard",
@@ -47,6 +48,14 @@ runiverse_data <- fetch_runiverse_data(author = "rempsyc",
     "ggflags"
   )
 )
+
+runiverse_data_centerconflictcooperation <- fetch_runiverse_data(
+  author = "centerconflictcooperation"
+)
+
+runiverse_data <- bind_rows(
+  runiverse_data_rempsyc,
+  runiverse_data_centerconflictcooperation)
 
 make_dt_with_hex(runiverse_data)
 ```
